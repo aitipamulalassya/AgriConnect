@@ -53,7 +53,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2" />
-                <span>contact@farmconnect.com</span>
+                <span>contact@agriconnect.com</span>
               </li>
             </ul>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
           
           <div className="text-green-100 text-sm">
-            <p>&copy; {new Date().getFullYear()} FarmConnect. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} AgriConnect. All rights reserved.</p>
             <p className="mt-1">
               <a href="#" className="hover:text-white transition">Privacy Policy</a> | 
               <a href="#" className="hover:text-white transition ml-2">Terms of Service</a>

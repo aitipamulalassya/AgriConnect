@@ -50,7 +50,7 @@ const ContactPage = () => {
               <div>
                 <h3 className="font-semibold text-lg">Headquarters</h3>
                 <p className="text-gray-600">
-                  AgriConnect Technologies Pvt. Ltd.<br />
+                  AgriConnect Pvt. Ltd.<br />
                   #24, Farm Tower, MG Road<br />
                   Bengaluru, Karnataka 560001
                 </p>

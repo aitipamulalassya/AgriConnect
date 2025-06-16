@@ -40,7 +40,7 @@ const Hero = () => {
               Shop Now
             </Link>
             <Link 
-              to="/signup" 
+              to="/register" 
               className="bg-white/90 hover:bg-white text-green-700 font-bold py-4 px-8 rounded-lg shadow-lg transition-colors duration-300"
             >
               Sell With Us

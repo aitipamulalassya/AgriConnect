@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
+import { CartProvider } from './context/CartContext';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';  // ✅ Import store and persistor
@@ -13,7 +14,9 @@ root.render(
     <Provider store={store}>  {/* ✅ Wrap in Provider */}
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
-        <AuthProvider> <App /></AuthProvider>
+        <AuthProvider>   <CartProvider>
+      <App />
+    </CartProvider></AuthProvider>
          
         </BrowserRouter>
       </PersistGate>

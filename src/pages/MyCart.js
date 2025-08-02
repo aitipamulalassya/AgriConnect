@@ -1,3 +1,7 @@
+import React from 'react';
+import { useCart } from '../context/CartContext'; // Adjust path based on your project
+import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const CartPage = () => {
   const { cartItems, updateQuantity, removeFromCart } = useCart();
 

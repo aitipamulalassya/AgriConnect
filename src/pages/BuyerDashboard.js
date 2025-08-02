@@ -13,7 +13,7 @@ const cartItemsCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const { currentUser, logout } = useAuth();
-  const [cartItemsCount] = useState(3); // Temporary cart items count - replace with your actual cart state
+  
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">

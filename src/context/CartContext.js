@@ -1,5 +1,4 @@
-
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 export const CartContext = createContext();
 
@@ -16,3 +15,6 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+// ✅ Custom hook to use the cart context
+export const useCart = () => useContext(CartContext);

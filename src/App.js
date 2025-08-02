@@ -76,7 +76,11 @@ const App = () => {
             </DashboardLayout>
           } />
            <Route path="/farmer-dashboard/products" element={<Products />}/>
-       <Route path="/buyer-dashboard" element={<BuyerDashboard />}>
+<Route path="/buyer-dashboard" element={
+  <DefaultLayout>
+    <BuyerDashboard />
+  </DefaultLayout>
+}>
         <Route index element={<HomePage />} />
         <Route path="home" element={<HomePage />} />
         <Route path="products" element={<ProductsPage />} />

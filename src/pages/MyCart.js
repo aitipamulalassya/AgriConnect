@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaTrash, FaPlus, FaMinus, FaArrowLeft } from 'react-icons/fa';
+import { FaShoppingCart, FaTrash, FaPlus, FaMinus } from 'react-icons/fa';
 import { useCart } from '../context/CartContext';
 
 const CartPage = () => {
-  const { cartItems, addToCart, removeFromCart, updateCartQuantity } = useCart(); // make sure you add these in your context
+  const { cartItems, addToCart, removeFromCart, updateCartQuantity } = useCart();
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [isCheckingOut, setIsCheckingOut] = useState(false);

@@ -32,7 +32,7 @@ AgriConnect is a web application built using the react.js that connects farmers 
 
 ## 📦 Getting Started
 
-### 1. Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/aitipamulalassya/AgriConnect.git

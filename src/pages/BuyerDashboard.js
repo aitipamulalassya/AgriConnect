@@ -3,9 +3,14 @@ import { useAuth } from '../context/AuthContext';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { FaHome, FaShoppingBag, FaAddressBook, FaInfoCircle, FaUserCircle, FaShoppingCart, FaHeart, FaCog, FaSignOutAlt } from 'react-icons/fa';
 import logo from '../assets/images/logo.png'; 
-
+import { useCart } from '../context/CartContext';
 const BuyerDashboard = () => {
   const navigate = useNavigate();
+  
+const { cartItems } = useCart();
+const cartItemsCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
   const { currentUser, logout } = useAuth();
   const [cartItemsCount] = useState(3); // Temporary cart items count - replace with your actual cart state
@@ -29,28 +34,28 @@ const BuyerDashboard = () => {
                 to="/buyer-dashboard/home"
                 className="flex items-center text-gray-700 hover:text-green-600 px-3 py-2"
               >
-                <FaHome className="mr-1" />
+           
                 Home
               </Link>
               <Link
                 to="/buyer-dashboard/products"
                 className="flex items-center text-gray-700 hover:text-green-600 px-3 py-2"
               >
-                <FaShoppingBag className="mr-1" />
+             
                 Products
               </Link>
               <Link
                 to="/buyer-dashboard/about"
                 className="flex items-center text-gray-700 hover:text-green-600 px-3 py-2"
               >
-                <FaInfoCircle className="mr-1" />
+
                 About
               </Link>
               <Link
                 to="/buyer-dashboard/contact"
                 className="flex items-center text-gray-700 hover:text-green-600 px-3 py-2"
               >
-                <FaAddressBook className="mr-1" />
+               
                 Contact
               </Link>
             </div>

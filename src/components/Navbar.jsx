@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import logo from '../assets/images/logo.png';
-
+import { useCart } from '../context/CartContext';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { cartItems } = useCart();
+
+  // Total count of items (e.g., 2 apples + 3 bananas = 5)
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -41,9 +45,13 @@ const Navbar = () => {
 
           {/* Cart */}
           <Link to="/cart" className="relative p-2 text-gray-700 hover:text-green-600 transition-colors">
-            <FaShoppingCart className="text-xl" />
-            <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
-          </Link>
+      <FaShoppingCart className="text-xl" />
+      {totalQuantity > 0 && (
+        <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+          {totalQuantity}
+        </span>
+      )}
+    </Link>
 
           {/* Mobile Menu Button */}
           <button onClick={toggleMobileMenu} className="md:hidden text-gray-700">
